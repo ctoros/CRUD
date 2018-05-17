@@ -7,7 +7,7 @@
     public $dbname = "clase1";
 
     function connect(){
-      $conn = new mysqli(
+      $conn =  new mysqli(
                     $this->servername,
                     $this->username,
                     $this->password,

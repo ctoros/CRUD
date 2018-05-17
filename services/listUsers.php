@@ -6,7 +6,11 @@
   //if($method=="get"){
     //echo "paso por geeeet";
     $user = new User();
-    $resp = Array($user->listUsers());
+    $users = Array();
+//    $users = $user->listUsers2();
+    array_push($users, $user->listUsers());
+    echo json_encode($users);
+    
     
 
     
