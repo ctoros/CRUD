@@ -27,19 +27,30 @@
         }
       }
     }
+//    function listUsers2(){
+//        $db =
+//    }
         function listUsers(){
-            echo "paso por aqui";
       $db = new DataBase();
       $conn = $db->connect();
-  //    if($conn){
-        $sql = "SELECT * FROM user";
-        if ($conn->query($sql) === true) {
-           // return array(TRUE, $this->toJSON());
-            return $this;
-        } else {
-          return "sssssss";//array(FALSE, $conn->error);
-        }
-  //    }
+    if($conn){
+        $sql = "SELECT id,user,pass FROM user";
+        
+        $rs = $conn->query($sql);   // connuery($sql);
+        echo json_encode($rs);
+        
+
+        
+        
+//        if ($conn->query($sql) === true) {
+//            return array(TRUE, $this->toJSON());
+//            echo "entro a if listuser";            
+//             return array(TRUE, $this->toJSON());
+//        } else {
+//              echo "fallo if listuser";
+//          return array(FALSE, $conn->error);
+//        }
+     }
     }
        function delete($id){
       $db = new DataBase();
