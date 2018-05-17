@@ -6,7 +6,7 @@
     public $password = "admin";
     public $dbname = "clase1";
 
-    function connect(){
+    public function connect(){
       $conn =  new mysqli(
                     $this->servername,
                     $this->username,
@@ -16,7 +16,7 @@
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
           return FALSE;
-      }
+      }     
       return $conn;
     }
 

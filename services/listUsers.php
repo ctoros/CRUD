@@ -8,7 +8,9 @@
     $user = new User();
     $users = Array();
 //    $users = $user->listUsers2();
-    array_push($users, $user->listUsers());
+//    array_push($users, $user->listUsers());
+    $users = $user->listUsers();
+    
     echo json_encode($users);
     
     

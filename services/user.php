@@ -36,35 +36,14 @@ class User {
         $db = new DataBase();
         $conn = $db->connect();
         if ($conn) {
-            $sql = "SELECT id,user,pass FROM 'user'";
+            $sql = "SELECT id,user,pass FROM user";
             if ($conn->query($sql)) {
-                echo " paso a if query ";
-                $rs = $conn->query($sql);   // connuery($sql);
-                echo json_encode($rs);
-                return $rs;
-            }
-//        if ($conn->query($sql) === true) {
-//            return array(TRUE, $this->toJSON());
-//            echo "entro a if listuser";            
-//             return array(TRUE, $this->toJSON());
-//        } else {
-//              echo "fallo if listuser";
-//          return array(FALSE, $conn->error);
-//        }
-        }
-    }
-    function listUsers2() {
-        $db = new DataBase();
-        $conn = $db->connect();
-        if ($conn) {
-            $sql = "SELECT id,user,pass FROM 'user'";
-            $conn->query($sql);
-            $resultado = $conn->query($sql);
-            return $resultado;
-        }
-    }
 
-//$resultado->fetch_array(MYSQLI_ASSOC); o $resultado->fetch_assoc(); asociaría el nombre de el campo con el arreglo y nos daría:
+                $rs = $conn->query($sql);
+                return mysqli_fetch_all($rs);
+            }
+        }
+    }
 
     function delete($id) {
         $db = new DataBase();
@@ -78,9 +57,6 @@ class User {
             }
         }
     }
-
-//    "DELETE FROM MyGuests WHERE id=3";
-
 
     function toJSON() {
         $arr = array(
