@@ -29,9 +29,6 @@ class User {
         }
     }
 
-//    function listUsers2(){
-//        $db =
-//    }
     function listUsers() {
         $db = new DataBase();
         $conn = $db->connect();
@@ -40,10 +37,13 @@ class User {
             if ($conn->query($sql)) {
 
                 $rs = $conn->query($sql);
+             // print_r(mysqli_fetch_assoc($rs));
+
                 return mysqli_fetch_all($rs);
             }
         }
     }
+
 
     function delete($id) {
         $db = new DataBase();
