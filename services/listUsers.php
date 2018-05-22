@@ -12,28 +12,28 @@ $userss = $user->listUsers();
 //echo count($userss);
 
 
-//saco el numero de elementos
-$longitud = count($userss);
+////saco el numero de elementos
+//$longitud = count($userss);
 
 //Recorro todos los elementos
-for ($i = 0; $i < $longitud; $i++) {
-    $usuario = new User();
+//for ($i = 0; $i < $longitud; $i++) {
+//    $usuario = new User();
+////    
+//    $usuario->id = $userss[$i][0];
+//    $usuario->username = $userss[$i][1];
+//    $usuario->password = $userss[$i][2];
+//
+////    
+////echo $userss[$i][0];
+////echo $userss[$i][1];
+////echo $userss[$i][2];
 //    
-    $usuario->id = $userss[$i][0];
-    $usuario->username = $userss[$i][1];
-    $usuario->password = $userss[$i][2];
-
 //    
-//echo $userss[$i][0];
-//echo $userss[$i][1];
-//echo $userss[$i][2];
-    
-    
-   array_push($users, $usuario);
-}
+//   array_push($users, $usuario);
+//}
 
-print_r($users);
-echo json_encode($users);
+//print_r($users);
+echo json_encode($userss);
 
 
 //foreach ($userss as $usuarios) {

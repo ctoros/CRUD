@@ -30,6 +30,7 @@ class User {
     }
 
     function listUsers() {
+        $filas = [];
         $db = new DataBase();
         $conn = $db->connect();
         if ($conn) {
@@ -37,9 +38,19 @@ class User {
             if ($conn->query($sql)) {
 
                 $rs = $conn->query($sql);
+//                print_r(mysqli_fetch_assoc($rs));
              // print_r(mysqli_fetch_assoc($rs));
+//               array_push($users, $user->listUsers());
+                
+                
+                
+             while ($fila = mysqli_fetch_assoc($rs)){
+//                 print_r($fila);
+                 array_push($filas, $fila);
+            }
 
-                return mysqli_fetch_all($rs);
+//                return mysqli_fetch_all($rs);
+            return $filas;
             }
         }
     }
