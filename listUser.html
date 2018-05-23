@@ -52,13 +52,29 @@ and open the template in the editor.
 //                        document.write(data);
 //console.log(data);
                         var o = JSON.parse(data);
-//                        console.log(o);
+                        console.log(o);
+                        document.write("<table>");
+                        document.write("<tr>");
+                        document.write("<th>id</th>");
+                        document.write(" <th>user</th>");
+                        document.write("<th>pass</th>");
+                        document.write("</tr>");
                         $.each(o, function (index, value) {
+                            document.write("<tr>");
+                            document.write("<td>", value.id, "</td>");
+                            document.write("<td>", value.user, "</td>");
+                            document.write("<td>", value.pass, "</td>");
+                            document.write("</tr>");
+
+
+
+
                             console.log(value);
 
 
                         });
 
+                        document.write("</table>");
 
 
 
